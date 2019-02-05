@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{B94C3E9B-4915-4305-80BF-E3556CAE7921}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TwoWordNameAbbreviation.Tests/UnitTest1.cs">
+    <Files>
+      <File FileName="Program.cs" Line="1" Column="1" />
+      <File FileName="TwoWordNameAbbreviation.Tests/UnitTest1.cs" Line="11" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.TwoWordNameAbbreviation PreferredExecutionTarget="MonoDevelop.Default" FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.TwoWordNameAbbreviation.Tests FirstBuild="True" />
+</Properties>
