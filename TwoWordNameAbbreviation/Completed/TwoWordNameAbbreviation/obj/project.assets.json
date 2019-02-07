@@ -5737,11 +5737,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/samwells/dev/Katas/TwoWordNameAbbreviation/Initial/TwoWordNameAbbreviation/TwoWordNameAbbreviation.Tests/TwoWordNameAbbreviation.Tests.csproj",
-      "projectName": "TwoWordNameAbbreviation.Tests",
-      "projectPath": "/Users/samwells/dev/Katas/TwoWordNameAbbreviation/Initial/TwoWordNameAbbreviation/TwoWordNameAbbreviation.Tests/TwoWordNameAbbreviation.Tests.csproj",
+      "projectUniqueName": "/Users/samwells/dev/Katas/TwoWordNameAbbreviation/Completed/TwoWordNameAbbreviation/TwoWordNameAbbreviation.csproj",
+      "projectName": "TwoWordNameAbbreviation",
+      "projectPath": "/Users/samwells/dev/Katas/TwoWordNameAbbreviation/Completed/TwoWordNameAbbreviation/TwoWordNameAbbreviation.csproj",
       "packagesPath": "/Users/samwells/.nuget/packages/",
-      "outputPath": "/Users/samwells/dev/Katas/TwoWordNameAbbreviation/Initial/TwoWordNameAbbreviation/TwoWordNameAbbreviation.Tests/obj",
+      "outputPath": "/Users/samwells/dev/Katas/TwoWordNameAbbreviation/Completed/TwoWordNameAbbreviation/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

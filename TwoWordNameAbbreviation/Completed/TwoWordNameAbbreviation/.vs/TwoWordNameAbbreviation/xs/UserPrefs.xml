@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{A55CE43E-7A85-4929-8472-8AE419F63A7C}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="TwoWordNameAbbreviationTests.cs">
     <Files>
-      <File FileName="TwoWordNameAbbreviationTests.cs" Line="6" Column="6" />
+      <File FileName="TwoWordNameAbbreviationTests.cs" Line="19" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
