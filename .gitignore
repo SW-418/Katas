@@ -1,4 +1,4 @@
-.DS_Store
-*.vs
+*.DS_Store
+*.vs*
 *.cache
 */obj*
