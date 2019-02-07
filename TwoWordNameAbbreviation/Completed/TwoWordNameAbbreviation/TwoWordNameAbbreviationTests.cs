@@ -5,10 +5,12 @@ namespace TwoWordNameAbbreviation
     public class TwoWordNameAbbreviationTests
     {
         [Theory]
-        [InlineData("Sam Harris")]
-        public void TwoWordName_ShouldReturnAbbreviationSeparatedByPeriod(string name)
+        [InlineData("Sam Harris", "S.H")]
+        [InlineData("Patrick Feeney", "P.F")]
+        [InlineData("Sam Wells", "S.W")]
+        [InlineData("Yeety Yeeterson", "Y.Y")]
+        public void TwoWordName_ShouldReturnAbbreviationSeparatedByPeriod(string name, string expectedString)
         {
-            var expectedString ="S.H";
             var actualString = CalculateAbbreviation(name);
 
             Assert.Equal(expectedString, actualString);
@@ -16,7 +18,8 @@ namespace TwoWordNameAbbreviation
 
         static string CalculateAbbreviation(string name)
         {
-            return "S.H";
+            var splitName = name.Split(' ');
+            return splitName[0][0] + "." + splitName[1][0];
         }
     }
 }
