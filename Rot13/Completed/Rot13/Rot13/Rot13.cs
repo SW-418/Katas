@@ -10,33 +10,54 @@ namespace Rot13
         public static string ConvertMessage(string message)
         {
             var cipherText = "";
-            var lowercaseLetter = true;
             foreach (var letter in message)
             {
-                lowercaseLetter = true;
-                var index = LowerCaseLetters.IndexOf(letter.ToString());
-                if (index == -1)
+                var isLowerCase = true;
+                var letterString = letter.ToString();
+                if (IsNonAlpha(letterString))
                 {
-                    lowercaseLetter = false;
-                    index = UpperCaseLetters.IndexOf(letter.ToString());
-                }
-                var nextIndex = index + 13;
-                if (nextIndex >= 26)
-                {
-                    nextIndex = nextIndex - 26;
-                }
-
-                if (lowercaseLetter)
-                {
-                    cipherText += LowerCaseLetters[nextIndex];
+                    cipherText += letterString;
                 }
                 else
                 {
-                    cipherText += UpperCaseLetters[nextIndex];
-                }
+                    var index = LowerCaseLetters.IndexOf(letterString);
+                    if (index == -1)
+                    {
+                        index = UpperCaseLetters.IndexOf(letterString);
+                        isLowerCase = false;
+                    }
+
+                    var nextIndex = CalculateNextIndex(index);
+
+                    if (isLowerCase)
+                    {
+                        cipherText += LowerCaseLetters[nextIndex];
+                    }
+                    else
+                    {
+                        cipherText += UpperCaseLetters[nextIndex];
+                    }    
+                }           
+            }
+            return cipherText;
+        }
+
+        private static bool IsNonAlpha(string character)
+        {
+            var lowerIndex = LowerCaseLetters.IndexOf(character);
+            var upperIndex = UpperCaseLetters.IndexOf(character);
+            return lowerIndex == -1 && upperIndex == -1;
+        }
+
+        private static int CalculateNextIndex(int index)
+        {
+            var nextIndex = index + 13;
+            if (nextIndex >= 26)
+            {
+                nextIndex = nextIndex - 26;
             }
 
-            return cipherText;
+            return nextIndex;
         }
     }
 }

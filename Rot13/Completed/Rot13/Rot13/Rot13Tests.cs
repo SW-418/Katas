@@ -54,5 +54,13 @@ namespace Rot13
             var actualCipherText = Rot13.ConvertMessage(plaintext);
             Assert.Equal(expectedCipherText, actualCipherText);
         }
+        
+        [Theory]
+        [InlineData("10+2 is twelve.", "10+2 vf gjryir.")]
+        public void ConvertMessage_ShouldNotAlterNumbersSymbolsOrSpaces(string plaintext, string expectedCipherText)
+        {
+            var actualCipherText = Rot13.ConvertMessage(plaintext);
+            Assert.Equal(expectedCipherText, actualCipherText);
+        }
     }
 }
