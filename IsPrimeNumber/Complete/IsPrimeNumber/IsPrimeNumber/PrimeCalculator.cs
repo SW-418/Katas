@@ -4,7 +4,16 @@ namespace IsPrimeNumber
     {
         public static bool IsPrimeNumber(int number)
         {
-            return number > 1 && number % 1 == 0 && number % number == 0;
+            var divisibilityCount = 0;
+            
+            for (var i = number; i > 0 && divisibilityCount <= 2; i--)
+            {
+                if (number % i == 0)
+                {
+                    divisibilityCount++;
+                }
+            }
+            return divisibilityCount == 2;
         }
     }
 }
