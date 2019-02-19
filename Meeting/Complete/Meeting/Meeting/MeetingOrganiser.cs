@@ -4,7 +4,9 @@ namespace Meeting
     {
         public static string CreateMeeting(string names)
         {
-            return names;
+            var splitNames = names.Split(':');
+            var newName = splitNames[0].ToUpper() + " " + splitNames[1].ToUpper();
+            return newName;
         }
     }
 }
