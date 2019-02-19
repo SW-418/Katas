@@ -6,32 +6,20 @@ namespace Meeting
     public class Tests
     {   
         [Theory]
-        [InlineData("Fred Corwill", "FRED CORWILL")]
-        [InlineData("Wilfred Corwill", "WILFRED CORWILL")]
-        [InlineData("Barney Tornbull", "BARNEY TORNBULL")]
-        [InlineData("Betty Tornbull", "BETTY TORNBULL")]
-        [InlineData("Bjorn Tornbull", "BJORN TORNBULL")]
-        [InlineData("Rachel Corwill", "RACHEL CORWILL")]
-        [InlineData("Alfred Corwill", "ALFRED CORWILL")]
-        public void CapitaliseName_GivenASingleName_ShouldCapitaliseName(string initialName, string expectedResult)
+        [InlineData("Fred", "Corwill", "FRED","CORWILL")]
+        [InlineData("Wilfred","Corwill", "WILFRED","CORWILL")]
+        [InlineData("Barney","Tornbull", "BARNEY","TORNBULL")]
+        [InlineData("Betty","Tornbull", "BETTY","TORNBULL")]
+        [InlineData("Bjorn","Tornbull", "BJORN","TORNBULL")]
+        [InlineData("Rachel","Corwill", "RACHEL","CORWILL")]
+        [InlineData("Alfred","Corwill", "ALFRED","CORWILL")]
+        public void Capitalise_GivenANonCapitalisedName_ShouldCapitaliseName(string firstName, string secondName, 
+            string capitalisedFirstName, string capitalisedSurname)
         {
-            var actualResult = MeetingOrganiser.CapitaliseName(initialName);
-            Assert.Equal(expectedResult, actualResult);
-        }
-        
-        
-        [Theory]
-        [InlineData("FRED CORWILL", "CORWILL FRED")]
-        [InlineData("WILFRED CORWILL", "CORWILL WILFRED")]
-        [InlineData("BARNEY TORNBULL", "TORNBULL BARNEY")]
-        [InlineData("BETTY TORNBULL", "TORNBULL BETTY")]
-        [InlineData("BJORN TORNBULL", "TORNBULL BJORN")]
-        [InlineData("RACHEL CORWILL", "CORWILL RACHEL")]
-        [InlineData("ALFRED CORWILL", "CORWILL ALFRED")]
-        public void ReverseNames_GivenASingleName_ShouldSwapSurnameAndName(string initialName, string expectedResult)
-        {
-            var actualResult = MeetingOrganiser.ReverseNames(initialName);
-            Assert.Equal(expectedResult, actualResult);
+            var name = new Name(firstName, secondName);
+            name.Capitalise();
+            Assert.Equal(capitalisedFirstName, name.FirstName);
+            Assert.Equal(capitalisedSurname, name.Surname);
         }
         
         [Theory]

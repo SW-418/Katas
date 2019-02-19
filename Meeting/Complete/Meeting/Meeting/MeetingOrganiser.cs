@@ -1,4 +1,3 @@
-using System;
 using System.Text;
 
 namespace Meeting
@@ -7,32 +6,36 @@ namespace Meeting
     {
         public static string CreateMeeting(string names)
         {
-            var stringbuilder = new StringBuilder();
-            stringbuilder.Append("(");
+            var stringBuilder = new StringBuilder();
             var splitNames = names.Split(':');
-            var newName = splitNames[0] + " " + splitNames[1];
-
-            var capitalisedName = CapitaliseName(newName);
-            var reversedName = ReverseNames(capitalisedName);
-
-            var formattedName = reversedName.Replace(" ", ", ");
-
-            stringbuilder.Append(formattedName);
-            stringbuilder.Append(")");
+            var name = new Name(splitNames[0], splitNames[1]);
+            name.Capitalise();
+                        
+            stringBuilder.Append("(");
+            stringBuilder.Append(name.Surname);
+            stringBuilder.Append(", ");
+            stringBuilder.Append(name.FirstName);
+            stringBuilder.Append(")");
                
-            return stringbuilder.ToString();
+            return stringBuilder.ToString();
+        }
+    }
+
+    public class Name
+    {
+        public string FirstName { get; private set; }
+        public string Surname { get; private set; }
+        
+        public Name(string firstName, string surname)
+        {
+            FirstName = firstName;
+            Surname = surname;
         }
 
-        public static string CapitaliseName(string name)
+        public void Capitalise()
         {
-            var splitName = name.Split(' ');
-            return splitName[0].ToUpper() + " " + splitName[1].ToUpper();
-        }
-
-        public static string ReverseNames(string name)
-        {
-            var splitName = name.Split(' ');
-            return splitName[1] + " " + splitName[0];
+            FirstName = FirstName.ToUpper();
+            Surname = Surname.ToUpper();
         }
     }
 }
