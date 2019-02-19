@@ -1,8 +1,9 @@
+using System;
 using System.Text;
 
 namespace Meeting
 {
-    public class Name
+    public class Name : IComparable<Name>
     {
         public string FirstName { get; private set; }
         public string Surname { get; private set; }
@@ -28,6 +29,12 @@ namespace Meeting
             stringBuilder.Append(this.FirstName);
             stringBuilder.Append(")");
             return stringBuilder.ToString();
+        }
+
+        public int CompareTo(Name name)
+        {
+            return this.Surname.Equals(name.Surname) ? 
+                FirstName.CompareTo(name.FirstName) : Surname.CompareTo(name.Surname);
         }
     }
 }

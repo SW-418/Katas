@@ -45,6 +45,15 @@ namespace Meeting
             Assert.Equal(expectedResult, actualResult);
         }
         
+        [Theory]
+        [InlineData("Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"
+            , "(CORWILL, ALFRED)(CORWILL, FRED)(CORWILL, RAPHAEL)(CORWILL, WILFRED)(TORNBULL, BARNEY)(TORNBULL, BETTY)(TORNBULL, BJON)")]
+        public void CreateMeeting_GivenListOfNames_ShouldReturnNamesInAlphabeticalOrder(string initialName, string expectedResult)
+        {
+            var actualResult = MeetingOrganiser.CreateMeeting(initialName);
+            Assert.Equal(expectedResult, actualResult);
+        }
+        
         
         
         
