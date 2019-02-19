@@ -13,7 +13,7 @@ namespace Meeting
         [InlineData("Bjorn:Tornbull", "BJORN TORNBULL")]
         [InlineData("Rachel:Corwill", "RACHEL CORWILL")]
         [InlineData("Alfred:Corwill", "ALFRED CORWILL")]
-        public void Meeting_GivenASingleName_ShouldCapitaliseNameAndRemoveColon(string initialName, string expectedResult)
+        public void CreateMeeting_GivenASingleName_ShouldCapitaliseNameAndRemoveColon(string initialName, string expectedResult)
         {
             var actualResult = MeetingOrganiser.CreateMeeting(initialName);
             Assert.Equal(expectedResult, actualResult);
@@ -26,7 +26,7 @@ namespace Meeting
         [InlineData("Bjorn:Tornbull", "TORNBULL BJORN")]
         [InlineData("Rachel:Corwill", "CORWILL RACHEL")]
         [InlineData("Alfred:Corwill", "CORWILL ALFRED")]
-        public void Meeting_GivenASingleName_ShouldSwapSurnameAndName(string initialName, string expectedResult)
+        public void CreateMeeting_GivenASingleName_ShouldSwapSurnameAndName(string initialName, string expectedResult)
         {
             var actualResult = MeetingOrganiser.CreateMeeting(initialName);
             Assert.Equal(expectedResult, actualResult);
