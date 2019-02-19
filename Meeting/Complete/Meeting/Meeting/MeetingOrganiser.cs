@@ -7,15 +7,19 @@ namespace Meeting
         public static string CreateMeeting(string names)
         {
             var stringBuilder = new StringBuilder();
-            var splitNames = names.Split(':');
-            var name = new Name(splitNames[0], splitNames[1]);
-            name.Capitalise();
+            var splitNames = names.Split(';');
+            foreach (var nameString in splitNames)
+            {
+                var splitName = nameString.Split(':');
+                var name = new Name(splitName[0], splitName[1]);
+                name.Capitalise();
                         
-            stringBuilder.Append("(");
-            stringBuilder.Append(name.Surname);
-            stringBuilder.Append(", ");
-            stringBuilder.Append(name.FirstName);
-            stringBuilder.Append(")");
+                stringBuilder.Append("(");
+                stringBuilder.Append(name.Surname);
+                stringBuilder.Append(", ");
+                stringBuilder.Append(name.FirstName);
+                stringBuilder.Append(")");
+            }
                
             return stringBuilder.ToString();
         }
