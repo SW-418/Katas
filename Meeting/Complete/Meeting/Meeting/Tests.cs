@@ -18,5 +18,20 @@ namespace Meeting
             var actualResult = MeetingOrganiser.CreateMeeting(initialName);
             Assert.Equal(expectedResult, actualResult);
         }
+        [Theory]
+        [InlineData("Fred:Corwill", "CORWILL FRED")]
+        [InlineData("Wilfred:Corwill", "CORWILL WILFRED")]
+        [InlineData("Barney:Tornbull", "TORNBULL BARNEY")]
+        [InlineData("Betty:Tornbull", "TORNBULL BETTY")]
+        [InlineData("Bjorn:Tornbull", "TORNBULL BJORN")]
+        [InlineData("Rachel:Corwill", "CORWILL RACHEL")]
+        [InlineData("Alfred:Corwill", "CORWILL ALFRED")]
+        public void Meeting_GivenASingleName_ShouldSwapSurnameAndName(string initialName, string expectedResult)
+        {
+            var actualResult = MeetingOrganiser.CreateMeeting(initialName);
+            Assert.Equal(expectedResult, actualResult);
+        }
+        
+        
     }
 }
