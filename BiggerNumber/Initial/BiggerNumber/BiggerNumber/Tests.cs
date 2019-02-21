@@ -21,12 +21,4 @@ namespace BiggerNumber
             Assert.Equal(-1, result);
         }
     }
-
-    public class Calculator
-    {
-        public static long BiggerNumber(long number)
-        {
-            return number;
-        }
-    }
 }
