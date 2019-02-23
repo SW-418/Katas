@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace BiggerNumber
 {
@@ -6,25 +7,16 @@ namespace BiggerNumber
     {
         public static long BiggerNumber(long number)
         {
-            var numberLength = Math.Floor(Math.Log10(number) + 1);
-            if (numberLength == 1)
+            var numberString = number.ToString();
+            if (numberString.Length == 1)
             {
                 return -1;
             }
-
-
-            var numberString = number.ToString();
+           
             var firstNumber = numberString[0];
-            var recurringNumbers = 0;
-            for (var i = 1; i < numberLength; i++)
-            {
-                if (firstNumber == numberString[i])
-                {
-                    recurringNumbers++;
-                }
-            }
+            var recurringNumbers = numberString.Count(x => x == firstNumber);
 
-            if (recurringNumbers == numberLength - 1)
+            if (recurringNumbers == numberString.Length)
             {
                 return -1;
             }

@@ -36,5 +36,21 @@ namespace BiggerNumber
             var result = Calculator.BiggerNumber(number);
             Assert.Equal(-1, result);
         }
+        
+        [Theory]
+        [InlineData(531)]
+        [InlineData(643)]
+        [InlineData(765)]
+        [InlineData(987)]
+        [InlineData(921)]
+        [InlineData(99321)]
+        [InlineData(998877)]
+        [InlineData(520)]
+        [InlineData(77553311)]
+        public void BiggerNumber_ReturnsMinus1_WhenIsAlreadyBiggestNumber(long number)
+        {
+            var result = Calculator.BiggerNumber(number);
+            Assert.Equal(-1, result);
+        }
     }
 }
