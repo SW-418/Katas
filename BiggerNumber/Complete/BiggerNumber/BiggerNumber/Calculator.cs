@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace BiggerNumber
@@ -12,7 +13,7 @@ namespace BiggerNumber
             {
                 return -1;
             }
-           
+            
             var firstNumber = numberString[0];
             var recurringNumbers = numberString.Count(x => x == firstNumber);
 
@@ -20,6 +21,15 @@ namespace BiggerNumber
             {
                 return -1;
             }
+
+            for (var i = 1; i < numberString.Length; i++)
+            {
+                if (numberString[i - 1] > numberString[i])
+                {
+                    return -1;
+                }
+            }
+            
             return number;
         }
     }
