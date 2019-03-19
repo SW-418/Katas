@@ -52,5 +52,18 @@ namespace BiggerNumber
             var result = Calculator.BiggerNumber(number);
             Assert.Equal(-1, result);
         }
+        
+        [Theory]
+        [InlineData(12, 21)]
+        [InlineData(513, 531)]
+        [InlineData(2017, 2071)]
+        [InlineData(414, 441)]
+        [InlineData(144, 414)]
+        [InlineData(1234567890, 1234567908)]
+        public void BiggerNumber_ShouldReturnNextBiggestNumber_WhenPassedValidInput(long number, long expectedResult)
+        {
+            var result = Calculator.BiggerNumber(number);
+            Assert.Equal(expectedResult, result);
+        }
     }
 }

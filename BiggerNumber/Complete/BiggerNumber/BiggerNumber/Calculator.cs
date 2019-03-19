@@ -1,6 +1,6 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace BiggerNumber
 {
@@ -22,14 +22,34 @@ namespace BiggerNumber
                 return -1;
             }
 
-            for (var i = 1; i < numberString.Length; i++)
+            var isBiggestNumber = true;
+            for (var i = 1; i < numberString.Length && isBiggestNumber; i++)
             {
-                if (numberString[i - 1] > numberString[i])
+                if (numberString[i - 1] < numberString[i])
                 {
-                    return -1;
+                    isBiggestNumber = false;
                 }
             }
+
+            if (isBiggestNumber)
+            {
+                return -1;
+            }
+
             
+            for (var i = numberString.Length - 2; i >= 0; i--)
+            {
+                var currentNumber = numberString[i + 1];
+                if (currentNumber > numberString[i])
+                {
+                    var newNumberString = numberString.Substring(0, i);
+                    var stringBuilder = new StringBuilder(numberString);
+                    stringBuilder.Remove(i, 2);
+                    stringBuilder.Insert(i, currentNumber+""+numberString[i]);         
+                    
+                    return Convert.ToInt64(stringBuilder.ToString());
+                }
+            }   
             return number;
         }
     }
