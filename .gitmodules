@@ -1,0 +1,9 @@
+[submodule "TennisRefactor/TennisRefactor/Complete/Tennis-Refactoring-Kata"]
+	path = TennisRefactor/TennisRefactor/Complete/Tennis-Refactoring-Kata
+	url = https://github.com/emilybache/Tennis-Refactoring-Kata.git
+[submodule "TennisRefactor/Initial/TennisRefactor/Complete/Tennis-Refactoring-Kata"]
+	path = TennisRefactor/Initial/TennisRefactor/Complete/Tennis-Refactoring-Kata
+	url = https://github.com/emilybache/Tennis-Refactoring-Kata.git
+[submodule "TennisRefactor/Complete/TennisRefactor/Complete/Tennis-Refactoring-Kata"]
+	path = TennisRefactor/Complete/TennisRefactor/Complete/Tennis-Refactoring-Kata
+	url = https://github.com/emilybache/Tennis-Refactoring-Kata.git
